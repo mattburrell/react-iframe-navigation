@@ -1,0 +1,26 @@
+{
+  "name": "react-iframe-navigation",
+  "version": "1.0.0",
+  "description": "A React app showing how to run another react app inside an iframe - and keeping the navigation (back & forward buttons) in sync.",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd inner-react-app && npm install --include=dev && cd ../outer-react-app && npm install --include=dev",
+    "build": "cd inner-react-app && npm run build && cd ../outer-react-app && npm run build",
+    "inner": "npm run dev --prefix ./inner-react-app",
+    "outer": "npm run dev --prefix ./outer-react-app",
+    "start": "concurrently --kill-others-on-fail \"npm run inner\" \"npm run outer\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattburrell/react-iframe-navigation.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattburrell/react-iframe-navigation/issues"
+  },
+  "homepage": "https://github.com/mattburrell/react-iframe-navigation#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
